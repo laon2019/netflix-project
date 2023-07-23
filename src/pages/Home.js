@@ -12,27 +12,43 @@ const Home = () => {
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
+  
   if (loading) {
     return (
       <ClipLoader className="spin" color="#ffff" loading={loading} size={150} />
     );
   }
-  console.log(popularMovies);
+
+  // popularMovies가 존재하는지 확인 후 렌더링
   return (
     <div className="home">
-      <Banner movie={popularMovies.results[0]} />
-      <h1>PopularMovies</h1>
-      <div className="movie-slide-container">
-        <MovieSlide movies={popularMovies} />
-      </div>
-      <h1>TopRatedMovies</h1>
-      <div className="movie-slide-container">
-        <MovieSlide movies={topRatedMovies} />
-      </div>
-      <h1>UpcomingMovies</h1>
-      <div className="movie-slide-container">
-        <MovieSlide movies={upcomingMovies} />
-      </div>
+      {popularMovies && popularMovies.results && popularMovies.results.length > 0 && (
+        <>
+          <Banner movie={popularMovies.results[0]} />
+          <h1>PopularMovies</h1>
+          <div className="movie-slide-container">
+            <MovieSlide movies={popularMovies} />
+          </div>
+        </>
+      )}
+      
+      {topRatedMovies && topRatedMovies.results && topRatedMovies.results.length > 0 && (
+        <>
+          <h1>TopRatedMovies</h1>
+          <div className="movie-slide-container">
+            <MovieSlide movies={topRatedMovies} />
+          </div>
+        </>
+      )}
+      
+      {upcomingMovies && upcomingMovies.results && upcomingMovies.results.length > 0 && (
+        <>
+          <h1>UpcomingMovies</h1>
+          <div className="movie-slide-container">
+            <MovieSlide movies={upcomingMovies} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
