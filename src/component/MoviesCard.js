@@ -11,10 +11,11 @@ const MoviesCard = ({ movie }) => {
       <Link to={`/movies/${movie.id}`} className="movie_card" id="bright">
         <div className="info_section">
           <div className="movie_header">
-            <img
-              className="locandina"
-              src={`https://image.tmdb.org/t/p/original//${movie.poster_path}`}
-            />
+          <img
+            className="locandina"
+            src={`https://image.tmdb.org/t/p/original//${movie.poster_path}`}
+            alt={movie.original_title} // 영화 제목을 alt 속성으로 사용
+          />
             <h1>{movie.original_title}</h1>
             <h4>{movie.release_date}</h4>
 
