@@ -189,10 +189,11 @@
 
 .Review{
   padding: 50px 0; 
+  margin-top: 10px;
 }
 
 .movieRecommendations{
-  margin: 150px 0 50px;
+  margin: 100px 0 50px;
   padding: 50px 0;
 }
 
@@ -439,6 +440,9 @@ i span {
   }
   .movie-img{
     margin-bottom: 30px;
+  }
+  .movieRecommendations{
+    margin-top: 200px;
   }
   
 }
