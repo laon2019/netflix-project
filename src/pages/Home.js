@@ -11,7 +11,7 @@ const Home = () => {
     useSelector((state) => state.movie);
   useEffect(() => {
     dispatch(movieAction.getMovies());
-  }, []);
+  }, [dispatch]);
   
   if (loading) {
     return (

@@ -17,7 +17,7 @@ const Movies = () => {
 
   useEffect(() => {
     dispatch(movieAction.getMovies());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     // Combine the movie arrays in the desired order
