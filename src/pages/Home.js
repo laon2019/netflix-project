@@ -22,6 +22,7 @@ const Home = () => {
   // popularMovies가 존재하는지 확인 후 렌더링
   return (
     <div className="home">
+      <h1>안뇽</h1>
       {popularMovies && popularMovies.results && popularMovies.results.length > 0 && (
         <>
           <Banner movie={popularMovies.results[0]} />
