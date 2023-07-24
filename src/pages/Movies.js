@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../redux/actions/movieAction";
 import Pagination from "react-js-pagination";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import MoviesCard from "../component/MoviesCard";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -44,16 +44,15 @@ const Movies = () => {
   };
 
   return (
-    <div>
-      <div className="movie-section">
-        <Row>
-          {currentMoviesToDisplay.map((movie) => (
-            <Col lg={6} key={movie.id}>
-              <MoviesCard movie={movie} />
-            </Col>
-          ))}
-        </Row>
-      </div>
+    <Container>
+      <Row>
+        {currentMoviesToDisplay.map((movie) => (
+          <Col lg={6} key={movie.id} className="Cards">
+            <MoviesCard movie={movie} />
+          </Col>
+        ))}
+      </Row>
+
       <div className="Pagination">
         <Pagination
           activePage={currentPage}
@@ -65,7 +64,7 @@ const Movies = () => {
           linkClass="page-link"
         />
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -1,3 +1,4 @@
+
 #root{
   background-color: black;
   color: white;
@@ -116,12 +117,12 @@
   font-size: large;
 }
 .Detail{
-  margin: 50px 0 0 0;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 
@@ -192,31 +193,36 @@
 
 .movieRecommendations{
   margin: 150px 0 50px;
+  padding: 50px 0;
 }
 
-.movie-section{
+.movie-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
 }
-
+.row{
+  margin: 0;
+}
 .movie_card {
   position: relative;
   display: block;
-  height:100%;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   max-height: 550px;
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
-  /* margin-left: 30px; */
-  margin-bottom: 30px;
+  padding: 0;
+  /* margin: 10px; */ /* Remove this line to remove the right margin */
 }
+
 
 .movie_card:hover {
   transform: scale(1.02);
   transition: all 0.4s;
+  z-index: 3;
 }
 
 .movie_card .info_section {
@@ -228,14 +234,6 @@
   border-radius: 10px;
 }
 
-.movie_card .info_section {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-blend-mode: multiply;
-  z-index: 2;
-  border-radius: 10px;
-}
 
 .movie_card .info_section .movie_header {
   position: relative;
@@ -411,14 +409,15 @@ i span {
       width: 80%;
       background-position: -100% 10% !important;
   }
+  
 }
 
 @media screen and (max-width: 768px) {
   .movie_card {
-      width: 95%;
-      
-      min-height: 350px;
-      height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
   }
   .blur_back {
       width: 100%;
@@ -429,12 +428,19 @@ i span {
       margin-top: 85px;
   }
   .movie_desc {
-      width: 100%;
+    width: 100%;
   }
   .info_section {
-      background: linear-gradient(to top, #141413 50%, transparent 100%);
-      display: inline-grid;
+    background: linear-gradient(to top, #141413 50%, transparent 100%);
+    display: inline-grid;
   }
+  .Detail{
+    margin-top: 150px;
+  }
+  .movie-img{
+    margin-bottom: 30px;
+  }
+  
 }
 
 #bright {
@@ -574,7 +580,7 @@ i span {
 
 .page-item {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 5px 5px;
   border-radius: 5px;
  
 }
@@ -726,3 +732,14 @@ i span {
   overflow: hidden;
 }
 
+.Movies {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.Cards{
+    width: 90%;
+    margin-right: 0;
+
+}
