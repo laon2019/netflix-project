@@ -14,7 +14,7 @@ const Navigation = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link to="/" className="nav-item">HOME</Link>
+            {/* <Link to="/" className="nav-item">HOME</Link> */}
             <Link to="/movies" className="nav-item">MOVIES</Link>
           </Nav>
           {/* <Form className="d-flex">
